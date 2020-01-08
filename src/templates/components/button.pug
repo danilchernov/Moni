@@ -1,0 +1,69 @@
+include ../functions/inlineSvg.pug
+
+mixin button(title, customOptions = {})
+  -
+    //- Utils
+    const collectMods = (mods, mainClass) => {
+      let result = '';
+
+      if (mods) {
+        mods = mods.split(' ');
+        mods.forEach((mod) => {
+          if (mod[0] === '_') {
+            result += `${mainClass}${mod} `;
+          } else {
+            result += `${mod} `;
+          }
+        });
+      }
+
+      return result.trim();
+    }
+
+    const addDataAttributes = (currentAttributes, dataAttributes) => {
+      if (dataAttributes && Object.keys(dataAttributes).length !== 0) {
+        for (let key in data) {
+          currentAttributes[`data-${key}`] = data[key];
+        }
+      }
+
+      return currentAttributes;
+    }
+
+    //- Provide Default Options 🗯
+    let options = {
+      tag: 'button',
+      type: 'button',
+      ally: '',
+      disabled: false,
+      data: {}
+    }
+
+    //- Merge default & custom objects
+    Object.assign(options, customOptions)
+    const { tag, type, href, btnMods, icon,ally, disabled, data } = options
+
+    let buttonAttributes = {
+      class: collectMods(btnMods, 'button'),
+      type: (tag === 'a')? null: type,
+      href: (tag === 'a' && href)? href: (tag === 'a' && !href)? '#': null,
+      'aria-label': ally || null,
+      disabled: disabled
+    }
+
+    //- Patch our attributes
+    customAttributes = addDataAttributes(buttonAttributes, data)
+
+  //- Render Component
+
+  #{tag}.button&attributes(buttonAttributes)
+    span.button__content
+      if (icon)
+        span.button__icon(class = collectMods(icon.mods, 'button__icon'))
+          if (icon.name)
+            - const {name, width, height, viewBox} = icon
+            +inlineSvg(name, width, height, viewBox)
+
+      if (title)
+        span.button__title= title
+

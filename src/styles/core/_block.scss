@@ -1,0 +1,26 @@
+.block {
+  position: relative;
+
+  &__wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 30px;
+    max-width: $max-width;
+  }
+}
+
+@include do($lg) {
+  .block {
+    &__wrapper {
+      padding: 0 20px;
+    }
+  }
+}
+
+@include do($sm) {
+  .block {
+    &__wrapper {
+      padding: 0 15px;
+    }
+  }
+}

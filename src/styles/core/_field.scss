@@ -1,0 +1,65 @@
+.field {
+  position: relative;
+  display: block;
+
+  // font-family: $font-primary;
+  // font-weight: $font-weight;
+  // font-size: $text-size-xxs;
+  // line-height: $line-height-xxs;
+
+  &__title {
+    display: block;
+    color: #072038;
+    margin-bottom: 10px;
+  }
+
+  &__main {
+    position: relative;
+    display: block;
+  }
+
+  &__input {
+    appearance: none;
+    touch-action: none;
+
+    display: block;
+    width: 100%;
+    padding: 16px 23px;
+    border: 1px solid #e0e1e5;
+    border-radius: 1px;
+
+    transition: color 0.3s;
+    outline: none;
+
+    @include placeholder {
+      opacity: 1;
+      transition: all 0.3s;
+    }
+
+    &:focus,
+    &.is-focus {
+      border-color: #234668;
+      // border-color: red;
+
+      @include placeholder {
+        opacity: 0;
+      }
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
+  }
+
+  textarea.field__input {
+    resize: none;
+    min-height: 130px;
+  }
+
+  &__notify,
+  &__error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}

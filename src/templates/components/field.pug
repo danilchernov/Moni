@@ -1,0 +1,78 @@
+mixin field(title, customOptions = {})
+  -
+    //- Utils
+    const collectMods = (mods, mainClass) => {
+      let result = '';
+
+      if (mods) {
+        mods = mods.split(' ');
+        mods.forEach((mod) => {
+          if (mod[0] === '_') {
+            result += `${mainClass}${mod} `;
+          } else {
+            result += `${mod} `;
+          }
+        });
+      }
+
+      return result.trim();
+    }
+
+    const addDataAttributes = (currentAttributes, dataAttributes) => {
+      if (dataAttributes && Object.keys(dataAttributes).length !== 0) {
+        for (let key in data) {
+          currentAttributes[`data-${key}`] = data[key];
+        }
+      }
+
+      return currentAttributes;
+    }
+
+    //- Provide Default Options 🗯
+    let options = {
+      tag: 'input',
+      type: 'text',
+      name: '',
+      value: '',
+      ally: '',
+      data: {},
+      required: false,
+      readonly: false,
+      disabled: false,
+      autocomplete: false,
+      placholder: ''
+    }
+
+     //- Merge default & custom objects
+    Object.assign(options, customOptions)
+    const { tag, type, name, value, ally, js, data, required, readonly, disabled, autocomplete, placeholder, notifyMessage, errorMessage, fieldMods,inputMods } = options
+
+    let labelAttributes = {
+      class: collectMods(fieldMods, 'field'),
+    }
+
+    let inputAttributes = {
+      class: collectMods(inputMods, 'field__input'),
+      type: (tag !== 'textarea')? type: null,
+      'aria-label': ally || null,
+      required: required,
+      readonly: readonly,
+      disabled: disabled,
+      autocomplete: autocomplete,
+      placeholder: placeholder
+    }
+
+     //- Patch our attributes
+    customAttributes = addDataAttributes(labelAttributes, data)
+
+  //- Render Component
+  label.field&attributes(labelAttributes)
+    if (title)
+      span.field__title= title
+    span.field__main
+      #{tag}.field__input&attributes(inputAttributes)
+    if (notifyMessage)
+      span.field__notify= notifyMessage
+    if (errorMessage)
+      span.field__error= errorMessage
+

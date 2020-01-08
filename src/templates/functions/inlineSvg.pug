@@ -1,0 +1,10 @@
+mixin inlineSvg(icon, width, height, viewBox)
+  svg&attributes({
+    width: width,
+    height: height,
+    viewBox: viewBox
+  })
+    use&attributes({
+      'xlink:href': `images/sprite.svg#${icon}`
+    })
+

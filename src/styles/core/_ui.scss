@@ -1,0 +1,14 @@
+.ui {
+  &__list {
+    @include reset-list();
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 -15px 30px;
+  }
+
+  &__item {
+    @include flex-column(1, 4, 15px);
+    margin: 0 15px 15px;
+  }
+}

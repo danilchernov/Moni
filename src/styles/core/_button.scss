@@ -1,0 +1,113 @@
+/* --------------------------------
+  Styles for Button Components 🔘
+-------------------------------- */
+
+.button {
+  &::-moz-focus-inner {
+    padding: 0;
+    border: none;
+  }
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 11px 32px;
+    // border: 2px solid $theme-color;
+    // color: $btn-primary-label;
+    // font-size: $text-size-xxs;
+    // font-weight: $font-weight-medium;
+    // line-height: $line-height-xxs;
+    // background-color: $btn-primary-bg;
+    border-radius: 1px;
+    transition: all 0.3s;
+  }
+
+  &__icon {
+    position: relative;
+    flex: none;
+    width: auto;
+    margin-left: 10px; // order: 0;
+    line-height: 0; // fix excess height
+    z-index: 1;
+    transition: rotate 0.3s;
+
+    &_right {
+      order: 1;
+      margin-left: 15px;
+      margin-right: 0;
+    }
+
+    &_only {
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    min-width: 0;
+  }
+
+  &:focus,
+  .is-focus {
+    outline: none;
+  }
+
+  // @include do($lg, "min-width") {
+  //   &:hover,
+  //   &.is-hover {
+  //     .button {
+  //       &__content {
+  //         color: $btn-primary-focus-label;
+  //         background-color: $btn-primary-focus-bg;
+  //         border-color: $btn-primary-focus-bg;
+  //       }
+  //     }
+  //   }
+
+  //   &:focus,
+  //   &.is-focus {
+  //     .button {
+  //       &__content {
+  //         color: $btn-primary-focus-label;
+  //         background-color: $btn-primary-focus-bg;
+  //         border-color: $btn-primary-focus-bg;
+  //       }
+  //     }
+  //   }
+
+  //   &:active,
+  //   &.is-active {
+  //     .button {
+  //       &__content {
+  //         color: $btn-primary-active-label;
+  //         background-color: $btn-primary-active-bg;
+  //         border-color: $btn-primary-active-bg;
+  //       }
+  //     }
+  //   }
+  // }
+
+  &.is-loading {
+    opacity: 0.5;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    pointer-events: none;
+  }
+}
+
+.button_full {
+  display: block;
+  width: 100%;
+}
