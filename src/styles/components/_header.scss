@@ -1,0 +1,47 @@
+.header {
+  &__side {
+    display: flex;
+    align-items: center;
+    padding: 25px 0 20px 0;
+    margin-right: -30px;
+  }
+
+  &__col {
+    margin-right: 30px;
+
+    &_ml-a {
+      margin-left: auto;
+    }
+  }
+
+  &__logo {
+    margin-right: 58px;
+  }
+
+  &__side a {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__side p {
+    margin: 0;
+
+    font-size: 9px;
+    line-height: 16px;
+    color: map-get($map:$color, $key:remark);
+    text-transform: uppercase;
+  }
+
+  &__note {
+    span {
+      margin-right: 8px;
+      font-size: 12px;
+      line-height: 2;
+      color: map-get($map:$color, $key:highlight);
+    }
+
+    svg {
+      transform: translateY(1px);
+    }
+  }
+}

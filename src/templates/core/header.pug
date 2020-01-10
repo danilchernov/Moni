@@ -1,3 +1,25 @@
+include ../functions/inlineSvg.pug
+include ../components/button.pug
+
 header.header.block
 	.header__wrapper.block__wrapper
-		| Header
+		.header__side
+			.header__col
+				a.header__logo.logo(href='/', aria-label='Логотип')
+					+inlineSvg('Icons_Logo', 117, 43, '0 0 117 43')
+			.header__col
+				a.link.link_td-n(href='tel:88005502311', title='Телефон службы поддержки 📞') 8 (800) 550-2311
+				p Заявки принимаются только на сайте!
+			.header__col.header__col_ml-a
+				p.header__note
+					span Ваша заявка
+					+inlineSvg('Icons_Star', 16, 16, '0 0 16 16')
+			.header__col
+				+button('Рассчитать заём', {
+					btnMods: '_rounded _transparent'
+				})
+			.header__col
+				a(href='#', aria-label='Открыть меню').header__menu-button.menu-button.menu-button_burger
+					span
+					span
+					span

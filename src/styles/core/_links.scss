@@ -1,0 +1,8 @@
+.link {
+  color: map-get($map:$color, $key:focus);
+}
+
+/* text-decoration: none; */
+.link_td-n {
+  text-decoration: none;
+}

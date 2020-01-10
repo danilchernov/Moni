@@ -1,3 +1,47 @@
 /* --------------------------------
   Pallete 🎨
 -------------------------------- */
+
+/* Text */
+$color: (
+  default: #b1b1b1,
+  remark: #777777,
+  highlight: #000000,
+  focus: #1bc748
+);
+
+
+/* Title */
+$title: (
+  default: map-get($map: $color, $key:hightlight),
+);
+
+/* Range */
+$range: (
+  default: rgb(212, 212, 212),
+  active: rgb(27, 199, 72),
+  disabled: rgb(234, 67, 53),
+);
+
+$dash-color: #d4d4d4;
+
+/* Buttons */
+$btn-primary: (
+  color: map-get($map: $color, $key:hightlight),
+  bg-default: rgb(251, 188, 5),
+  bg-focus: #fba105,
+  bg-active: #fb9005
+);
+
+$btn-transparent: (
+  color: map-get($map: $color, $key:hightlight),
+  bg-default: transparent,
+  border-default: rgb(57, 204, 69),
+  border-focus: rgb(35, 180, 47),
+  border-active: rgb(35, 180, 47)
+);
+
+$btn-menu: (
+  default: #23b230,
+  focus: #23b42f
+);

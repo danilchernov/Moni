@@ -1,19 +1,18 @@
-/* --------------------------------
-  Styles for Button Components 🔘
--------------------------------- */
-
 .button {
+  position: relative;
+
   &::-moz-focus-inner {
     padding: 0;
     border: none;
   }
+
   display: inline-block;
-  position: relative;
-  padding: 0;
-  background-color: transparent;
   border: none;
-  border-radius: 0;
+  padding: 0;
   text-decoration: none;
+  transition: all 0.3s;
+  overflow: hidden;
+  background-color: transparent;
   cursor: pointer;
 
   &__content {
@@ -22,15 +21,18 @@
     align-items: center;
     justify-content: center;
     max-width: 100%;
-    padding: 11px 32px;
-    // border: 2px solid $theme-color;
-    // color: $btn-primary-label;
-    // font-size: $text-size-xxs;
-    // font-weight: $font-weight-medium;
-    // line-height: $line-height-xxs;
-    // background-color: $btn-primary-bg;
-    border-radius: 1px;
+    min-width: 275px;
+    border-radius: 0 10px 0 10px;
+    padding: 19px 20px;
+    border: 2px solid map-get($map:$btn-primary, $key:bg-default);
+    font-size: map-get($map: $button-base, $key:font-size);
+    font-weight: map-get($map: $button-base, $key:font-weight);
+    line-height: map-get($map: $button-base, $key:line-height);
+    text-transform: uppercase;
+    color: map-get($map:$btn-primary, $key:color);
+    background-color: map-get($map:$btn-primary, $key:bg-default);
     transition: all 0.3s;
+    overflow: hidden;
   }
 
   &__icon {
@@ -62,40 +64,40 @@
     outline: none;
   }
 
-  // @include do($lg, "min-width") {
-  //   &:hover,
-  //   &.is-hover {
-  //     .button {
-  //       &__content {
-  //         color: $btn-primary-focus-label;
-  //         background-color: $btn-primary-focus-bg;
-  //         border-color: $btn-primary-focus-bg;
-  //       }
-  //     }
-  //   }
+  @include do($xl, "min-width") {
+    &:hover,
+    &.is-hover {
+      .button {
+        &__content {
+          color: map-get($map: $btn-primary, $key:color);
+          background-color: map-get($map: $btn-primary, $key:bg-focus);
+          border-color: map-get($map: $btn-primary, $key:bg-focus);
+        }
+      }
+    }
 
-  //   &:focus,
-  //   &.is-focus {
-  //     .button {
-  //       &__content {
-  //         color: $btn-primary-focus-label;
-  //         background-color: $btn-primary-focus-bg;
-  //         border-color: $btn-primary-focus-bg;
-  //       }
-  //     }
-  //   }
+    &:focus,
+    &.is-focus {
+      .button {
+        &__content {
+          color: map-get($map: $btn-primary, $key:color);
+          background-color: map-get($map: $btn-primary, $key:bg-focus);
+          border-color: map-get($map: $btn-primary, $key:bg-focus);
+        }
+      }
+    }
 
-  //   &:active,
-  //   &.is-active {
-  //     .button {
-  //       &__content {
-  //         color: $btn-primary-active-label;
-  //         background-color: $btn-primary-active-bg;
-  //         border-color: $btn-primary-active-bg;
-  //       }
-  //     }
-  //   }
-  // }
+    &:active,
+    &.is-active {
+      .button {
+        &__content {
+          color: map-get($map: $btn-primary, $key:color);
+          background-color: map-get($map: $btn-primary, $key:bg-active);
+          border-color: map-get($map: $btn-primary, $key:bg-active);
+        }
+      }
+    }
+  }
 
   &.is-loading {
     opacity: 0.5;
@@ -110,4 +112,52 @@
 .button_full {
   display: block;
   width: 100%;
+}
+
+.button_rounded {
+  border-radius: 0 10px 0 10px;
+  overflow: hidden;
+}
+
+.button_transparent {
+  .button__content {
+    border-color: map-get($map:$btn-transparent, $key:border-default);
+    background-color: map-get($map:$btn-transparent, $key:bg-default);
+    z-index: 1;
+  }
+
+  @include do($xl, "min-width") {
+    &:hover,
+    &.is-hover {
+      .button {
+        &__content {
+          color: map-get($map: $btn-transparent, $key:color);
+          background-color: map-get($map: $btn-transparent, $key:bg-default);
+          border-color: map-get($map:$btn-transparent, $key:border-focus);
+        }
+      }
+    }
+
+    &:focus,
+    &.is-focus {
+      .button {
+        &__content {
+          color: map-get($map: $btn-primary, $key:color);
+          background-color: map-get($map: $btn-transparent, $key:bg-default);
+          border-color: map-get($map:$btn-transparent, $key:border-focus);
+        }
+      }
+    }
+
+    &:active,
+    &.is-active {
+      .button {
+        &__content {
+          color: map-get($map: $btn-primary, $key:color);
+          background-color: map-get($map: $btn-transparent, $key:bg-default);
+          border-color: map-get($map:$btn-transparent, $key:border-focus);
+        }
+      }
+    }
+  }
 }
