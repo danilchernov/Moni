@@ -1,0 +1,19 @@
+.mfp {
+  margin-left: auto;
+  display: flex;
+
+  &-bg {
+    background-color: map-get($map:$sidebar, $key:substrate);
+    opacity: 1;
+  }
+
+  &-container {
+    padding: 0;
+  }
+
+  &-content {
+    position: absolute;
+    @include trbl(0);
+    display: flex;
+  }
+}

@@ -1,0 +1,39 @@
+.navigation {
+  &__list {
+    @include reset-list();
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 0 25px;
+    font-size: 18px;
+    line-height: 2;
+    font-weight: $font-weight-regular;
+    color: map-get($map:$navigation, $key:default);
+    text-decoration: none;
+    transition: all 0.3s;
+
+    @include do($xl, "min-width") {
+      &:hover,
+      &.is-hover {
+        color: map-get($map:$navigation, $key:focus);
+      }
+
+      &:focus,
+      &.is-focus {
+        color: map-get($map:$navigation, $key:focus);
+      }
+    }
+
+    &_star {
+      &::after {
+        content: "";
+        display: inline-block;
+        @include size(15px);
+        background: url("../images/Icons_Star.svg") no-repeat 50% 50%;
+        transform: translateY(-7px);
+      }
+    }
+  }
+}

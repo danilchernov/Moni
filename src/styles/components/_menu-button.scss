@@ -1,8 +1,6 @@
 .menu-button {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
   @include size(20px,15px);
 
   text-decoration: none;
@@ -60,6 +58,31 @@
       &:last-child {
         bottom: 0;
       }
+    }
+  }
+
+  &_close {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    @include size(16px);
+    padding: 0;
+    background-color: transparent;
+
+    &::before {
+      content: "";
+      position: absolute;
+      @include trbl(0);
+      z-index: 150;
+    }
+
+    &:active {
+      top: 40px; // reset default behavior from mfp-lib
+    }
+
+    svg {
+      display: block;
+      @include size(100%);
     }
   }
 }

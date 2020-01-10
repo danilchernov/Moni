@@ -112,6 +112,10 @@
 .button_full {
   display: block;
   width: 100%;
+
+  .button__content {
+    min-width: auto;
+  }
 }
 
 .button_rounded {

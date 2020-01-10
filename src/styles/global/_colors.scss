@@ -43,5 +43,19 @@ $btn-transparent: (
 
 $btn-menu: (
   default: #23b230,
-  focus: #23b42f
+  focus: #23b42f,
+  close: rgb(212, 212, 212)
+);
+
+
+/* Sidebar */
+$sidebar: (
+  bg: #ffffff,
+  substrate: rgba(44, 44, 44, 0.4)
+);
+
+/* Navigation */
+$navigation: (
+  default: #1e1e1e,
+  focus: #39cc45
 );

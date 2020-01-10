@@ -1,0 +1,16 @@
+.sidebar {
+  flex: auto;
+  width: 305px;
+  background-color: map-get($map:$sidebar, $key:bg);
+
+  animation-duration: 0.3s; // animate.css
+
+  &__wrapper {
+    position: relative;
+    padding-top: 100px;
+  }
+
+  &__navigation {
+    margin-bottom: 60px;
+  }
+}

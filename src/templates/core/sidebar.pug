@@ -1,0 +1,33 @@
+include ../functions/inlineSvg.pug
+
+.mfp#sidebar.mfp-hide
+  aside.sidebar.animated.js-sidebar
+    .sidebar__wrapper.js-sidebar
+      .menu-button.menu-button_close.mfp-close(href='#') 
+        +inlineSvg('Icons_Close', 16, 16, '0 0 16 16')
+
+      nav.sidebar__navigation.navigation
+        ul.navigation__list
+          - 
+            var links = [
+              {
+                title: 'О сервисе',
+              },
+              {
+                title: 'Документы',
+              },
+              {
+                title: 'Ваша заявка',
+                star: true 
+              },
+            ]
+
+          each link in links
+            - var {title, star} = link
+            li.navigation__item
+              a.navigation__link(class= star? 'navigation__link_star': null,href='#', title='#', aria-label='#') !{title}
+      ul.sidebar__user-actions.user-actions.user-actions_sidebar
+        li.user-actions__item
+          +button('Рассчитать заём', {
+            btnMods: '_full _rounded _transparent'
+          })
