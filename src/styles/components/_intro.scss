@@ -1,0 +1,32 @@
+.intro {
+  // overflow: hidden;
+  &__wrapper {
+    position: relative;
+    display: flex;
+    padding-top: 100px;
+  }
+
+  &__main {
+    padding-top: 62px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: $font-weight-regular;
+    color: map-get($map:$color, $key:highlight);
+
+    span {
+      font-weight: $font-weight-medium;
+      color: map-get($map:$color, $key:focus);
+    }
+  }
+
+  &__side {
+    position: absolute;
+    top: 120px;
+    right: 0;
+  }
+}

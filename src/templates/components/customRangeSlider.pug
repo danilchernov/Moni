@@ -1,0 +1,24 @@
+include ../functions/inlineSvg
+
+mixin customRangeSlider()
+  .intro__custom-range-slider.custom-range-slider.js-custom-range-slider
+    .custom-range-slider__wrapper
+      .custom-range-slider__top
+        span.custom-range-slider__subtitle Сумма кредита:
+        .custom-range-slider__note
+          span.custom-range-slider__note-icon
+            +inlineSvg('icon-wallet', 28, 28, '0 0 28 28')
+          span.custom-range-slider__note-total
+            span.custom-range-slider__note-total-number.js-custom-range-slider-total 25 000
+            span.custom-range-slider__note-total-postfix руб
+
+      template#tooltip
+        .custom-range-slider__tooltip.tooltip.js-tooltip
+          .tooltip
+            .tooltip__wrapper
+              .tooltip__total
+                .tooltip__number.js-tooltip-number 25 000
+                .tooltip__postfix руб
+              .tooltip__note от 15 до 25 дней
+
+      .custom-range-slider__target.js-custom-range-slider-target

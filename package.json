@@ -24,13 +24,15 @@
     }
   },
   "dependencies": {
-    "@fancyapps/fancybox": "^3.5.7",
     "animate.css": "^3.7.2",
+    "ion-rangeslider": "^2.3.1",
     "jquery": "^3.4.1",
     "magnific-popup": "^1.1.0",
     "normalize.css": "^8.0.1",
+    "nouislider": "^14.1.1",
     "object-fit-images": "^3.2.4",
-    "svgxuse": "^1.2.6"
+    "svgxuse": "^1.2.6",
+    "wnumb": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",

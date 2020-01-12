@@ -1,0 +1,35 @@
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  min-width: 205px;
+  padding: 13px 20px 8px;
+  background-color: map-get($map:$tooltip, $key:bg);
+  box-shadow: map-get($map:$tooltip, $key:box-shadow);
+  border-radius: map-get($map:$tooltip, $key:border-radius);
+  
+  
+
+  &__total {
+    display: flex;
+    color: white;
+  }
+
+  &__number {
+    font-size: 24px;
+    line-height: 1;
+    min-width: 85px;
+  }
+
+  &__postfix {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__note {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #d4d4d4;
+  }
+}

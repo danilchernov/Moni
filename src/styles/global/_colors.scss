@@ -17,10 +17,17 @@ $title: (
 );
 
 /* Range */
-$range: (
-  default: rgb(212, 212, 212),
-  active: rgb(27, 199, 72),
-  disabled: rgb(234, 67, 53),
+$slider: (
+  subtitle: #777777,
+  bar-default: rgb(212, 212, 212),
+  bar-active: rgb(27, 199, 72),
+  bar-disabled: rgb(234, 67, 53),
+);
+
+$tooltip: (
+  bg: rgba(30, 30, 30, 0.8),
+  box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.12),
+  border-radius: 10px 0 10px 0,
 );
 
 $dash-color: #d4d4d4;

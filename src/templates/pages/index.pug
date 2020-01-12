@@ -1,13 +1,24 @@
 extends ../core/body
 
 include ../components/button
+include ../components/customRangeSlider
 
 block title
   | Moni 🌟
 
 block content
   
-  section.block
-    .block__wrapper
-      | Content
-      
+  section.intro.block
+    .intro__wrapper.block__wrapper
+      .intro__main
+        h2.intro__title 
+          | Рассчитайте ваше <br>
+          span индивидуальное предложение 
+        
+        +customRangeSlider()
+
+        
+      .intro__side
+        .scene
+          img.scene__clouds(src='images/clouds.png', alt='Облака')
+          img.scene__pig(src='images/pig.png', alt='Денежная свинюшка 🐷')
