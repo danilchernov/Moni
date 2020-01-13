@@ -8,8 +8,7 @@
   background-color: map-get($map:$tooltip, $key:bg);
   box-shadow: map-get($map:$tooltip, $key:box-shadow);
   border-radius: map-get($map:$tooltip, $key:border-radius);
-  
-  
+
 
   &__total {
     display: flex;

@@ -1,9 +1,13 @@
 .intro {
   // overflow: hidden;
+  background: map-get($map:$bg, $key:primary);
+
   &__wrapper {
     position: relative;
     display: flex;
     padding-top: 100px;
+
+    height: 678px;
   }
 
   &__main {

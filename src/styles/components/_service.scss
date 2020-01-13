@@ -1,0 +1,94 @@
+.service {
+  &__wrapper {
+    padding: 110px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 12px;
+    font-weight: $font-weight-regular;
+    color: map-get($map:$color, $key:remark);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__row {
+    display: flex;
+    margin: 0 -15px -20px;
+  }
+
+  &__col {
+    @include flex-column(1, 3, 15px);
+    margin: 0 15px 20px;
+  }
+
+  &__col > p {
+    margin-top: 0;
+    margin-bottom: 21px;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: $font-weight-regular;
+    color: map-get($map:$color, $key:highlight);
+
+    span {
+      color: map-get($map:$color, $key:focus);
+    }
+  }
+
+  &__col > p + h3 {
+    margin-top: 22px;
+  }
+
+  &__col > p + h3 + p {
+    margin-bottom: 23px;
+  }
+
+  &__col ul {
+    @include reset-list();
+  }
+
+  &__col li {
+    margin-bottom: 21px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col h3 {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 0;
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: $font-weight-medium;
+    line-height: 1.5;
+    color: map-get($map:$color, $key:highlight);
+
+    span {
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &__col h3 svg {
+    margin-right: 8px;
+    fill: map-get($map:$color, $key:focus);
+  }
+
+  &__col h3 + p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+    line-height: 1.5;
+    color: map-get($map:$color, $key:remark);
+  }
+
+  &__col a {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+include ../components/button
+
+mixin card()
+  .card
+    .card__header
+      img.card__img(src='images/jumping-pig.png', alt='Промо-изображение')
+    .card__content
+      h3.card__title
+        | Получите 
+        span до 50 000 руб 
+        span за 15 минут.
+    .card__footer
+      +button('Рассчитать заём', {
+        btnMods: 'card__button _full'
+      })

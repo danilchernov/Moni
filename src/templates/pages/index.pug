@@ -2,6 +2,8 @@ extends ../core/body
 
 include ../components/button
 include ../components/customRangeSlider
+include ../components/card
+include ../functions/inlineSvg
 
 block title
   | Moni 🌟
@@ -22,3 +24,85 @@ block content
         .scene
           img.scene__clouds(src='images/clouds.png', alt='Облака')
           img.scene__pig(src='images/pig.png', alt='Денежная свинюшка 🐷')
+  
+  section.service.block
+    .service__wrapper.block__wrapper
+      h1.service__title О сервисе
+      .service__row
+        .service__col
+          p Для получения займа онлайн вам понадобится: 
+          ul
+            -
+              let conditions = [
+                {
+                  title: 'Паспорт',
+                  icon: {
+                    name: 'Icons_Passport',
+                    width: 29,
+                    height: 30,
+                    viewBox: '0 0 29 30'
+                  },
+                  paragraph: 'Вам необходимо явиться гражданином РФ возрастом старше 18 лет'
+                },
+                {
+                  title: 'Телефон',
+                  icon: {
+                    name: 'Icons_Phone',
+                    width: 29,
+                    height: 30,
+                    viewBox: '0 0 29 30'
+                  },
+                  paragraph: 'Вам понадобится ввести номер телефона, чтобы с вами могли связаться '
+                },
+                {
+                  title: 'Кредитная карта',
+                  icon: {
+                    name: 'Icons_Card',
+                    width: 29,
+                    height: 30,
+                    viewBox: '0 0 29 30'
+                  },
+                  paragraph: 'Вам потребуется карточка с ненулевым балансом'
+                },
+              ]
+            
+            each condition in conditions
+              - let {title, icon, paragraph} = condition
+            
+              li 
+                h3
+                  +inlineSvg(icon.name, icon.width, icon.height, icon.viewBox)
+                  span= title
+                p= paragraph
+        .service__col 
+          p Займы предоставляются на сумму 
+            span от 5 000 до 50 000 рублей
+            | включительно на срок от 10 до 44 недель.
+
+          h3
+            span Соглашения и условия
+
+          p Заполняя анкету на нашем сервисе Вы соглашаетесь с условиями и соглашениями указанными на сайте.
+
+          
+          -
+            let links1 = [
+              {
+                title: 'Согласие на обработку ПД'
+              },
+              {
+                title: 'Публичная оферта'
+              },
+              {
+                title: 'Политика обработки ПД'
+              },
+            ]
+          
+          each link1 in links1
+            - let {title} = link1
+
+            a(href='#').link.display_flex.align-items_center
+              +inlineSvg('Icons_PDF', 21, 14, '0 0 21 14')
+              span= title
+        .service__col
+          +card()
