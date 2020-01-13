@@ -8,6 +8,10 @@ include ../functions/inlineSvg
 block title
   | Moni 🌟
 
+block scripts
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=b750eee1-3a58-4691-bd74-8e3e5c3681c1&lang=ru_RU"></script>
+
+
 block content
   
   section.intro.block
@@ -106,6 +110,7 @@ block content
               span= title
         .service__col
           +card()
+  
   section.contacts.block
     .contacts__wrapper.block__wrapper
       .contacts__main
