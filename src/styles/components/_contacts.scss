@@ -32,12 +32,11 @@
       margin-right: 0;
     }
 
-    &_display-flex {
+    &_d-flex {
       flex: auto;
       display: flex;
       justify-content: space-between;
       max-width: 380px;
-      padding-right: 20px;
       flex-wrap: wrap;
       margin-bottom: -7px;
     }

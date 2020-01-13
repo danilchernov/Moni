@@ -105,7 +105,7 @@ block content
           each link1 in links1
             - let {title} = link1
 
-            a(href='#').link.display_flex.align-items_center
+            a(href='#').link.d-flex.ai-center
               +inlineSvg('Icons_PDF', 21, 14, '0 0 21 14')
               span= title
         .service__col
@@ -119,16 +119,16 @@ block content
           .contacts__col
             h3.contacts__subtitle Фактический адрес:
             address 656049, г. Барнаул, пр-т. <br> Красноармейский д. 47
-          .contacts__col.contacts__col_display-flex
+          .contacts__col.contacts__col_d-flex
             .contacts__item
               h3.contacts__subtitle Тел:
-              a.link.text-decoration_none(href='tel:+73852229707') 8 (3852) 229-707
+              a.link.td-none(href='tel:+73852229707') 8 (3852) 229-707
             .contacts__item
               h3.contacts__subtitle E-mail:
-              a.link.text-decoration_none(href='mailto:client@good-zaim.ru') client@good-zaim.ru
+              a.link.td-none(href='mailto:client@good-zaim.ru') client@good-zaim.ru
             .contacts__item.contacts__item_full
-              .note.note_remark.note_fz-large.tt-n
-                .note__icon.display_flex.align-items_center.jc_center.note__icon_round.note__icon_side-left
+              .note.note_remark.note_fz-large.tt-none
+                .note__icon.d-flex.ai-center.jc-center.note__icon_round.note__icon_side-left
                   +inlineSvg('Icons_Star', 16, 16, '0 0 16 16')
                 span Заявки принимаются только на сайте
           .contacts__col.contacts__col_ml-auto

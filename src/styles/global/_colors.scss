@@ -5,15 +5,19 @@
 /* Text */
 $color: (
   default: #b1b1b1,
+  light: #ffffff,
   remark: #777777,
   highlight: #000000,
-  focus: #1bc748
+  focus: #1bc748,
+  warning: #fbbc05
 );
 
 $bg: (
   primary: rgb(221, 239, 251),
   secondary: rgb(245, 245, 245),
-  light: white
+  light: white,
+  dark: rgb(44, 44, 44),
+  warning: #fbbc05
 );
 
 /* Title */
@@ -81,3 +85,17 @@ $card: (
 $contacts: (
   box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.06)
 );
+
+/* Footer */
+$footer: (
+);
+
+.Bg {
+  background-color: rgb(44, 44, 44);
+  position: absolute;
+  left: 1660px;
+  top: 2577px;
+  width: 1920px;
+  height: 742px;
+  z-index: 451;
+}

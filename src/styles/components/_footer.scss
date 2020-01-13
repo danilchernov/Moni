@@ -1,3 +1,99 @@
 .footer {
-  color: inherit;
+  background-color: map-get($map:$bg, $key:dark);
+
+  &__wrapper {
+    padding-top: 60px;
+    padding-bottom: 74px;
+
+    color: map-get($map:$color, $key:remark);
+  }
+
+  &__navigation {
+    max-width: 597px;
+    margin-bottom: 62px;
+  }
+
+  a.link {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  p {
+    margin: 17px 0;
+
+    span {
+      color: map-get($map:$color, $key:focus);
+    }
+  }
+
+  strong {
+    color: map-get($map:$color, $key:warning);
+    font-weight: $font-weight-regular;
+  }
+
+  &__img {
+    display: block;
+    margin-top: 57px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__row {
+    display: flex;
+    // align-items: flex-start;
+  }
+
+  &__col {
+    margin-right: 11%;
+    color: map-get($map:$color, $key:light);
+    font-size: 16px;
+    line-height: 1.5;
+
+    &_flex-initial {
+      flex: initial;
+      width: 40.2%;
+    }
+
+    &_ml-auto {
+      margin-left: auto;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_d-flex {
+      flex: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 378px;
+    }
+  }
+
+  &__col h3 {
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__col address {
+    font-style: normal;
+  }
+
+  &__warning {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include size(36px);
+    margin-bottom: 45px;
+    font-size: 14px;
+    line-height: 1.25;
+    color: map-get($map:$color, $key:highlight);
+    background-color: map-get($map:$bg, $key:warning);
+    border-radius: 0 10px 0 10px;
+  }
 }
