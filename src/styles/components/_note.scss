@@ -1,0 +1,46 @@
+.note {
+  display: flex;
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 2;
+  color: map-get($map:$color, $key:highlight);
+  text-transform: uppercase;
+
+  &__icon {
+    svg {
+      transform: translateY(1px);
+    }
+
+    &_side-left {
+      margin-right: 8px;
+    }
+
+    &_side-right {
+      margin-right: 8px;
+    }
+
+    &_round {
+      @include size(25px);
+      border-radius: 50%;
+      background-color: rgb(245, 245, 245);
+
+      svg {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &_remark {
+    color: map-get($map:$color, $key:remark);
+  }
+
+  &_fz-large {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &.tt-n {
+    text-transform: none;
+  }
+}

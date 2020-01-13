@@ -31,17 +31,4 @@
     color: map-get($map:$color, $key:remark);
     text-transform: uppercase;
   }
-
-  &__note {
-    span {
-      margin-right: 8px;
-      font-size: 12px;
-      line-height: 2;
-      color: map-get($map:$color, $key:highlight);
-    }
-
-    svg {
-      transform: translateY(1px);
-    }
-  }
 }

@@ -11,9 +11,10 @@ $color: (
 );
 
 $bg: (
-  primary: rgb(221, 239, 251)
+  primary: rgb(221, 239, 251),
+  secondary: rgb(245, 245, 245),
+  light: white
 );
-
 
 /* Title */
 $title: (
@@ -76,3 +77,7 @@ $card: (
   box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.06)
 );
 
+/* Contacts */
+$contacts: (
+  box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.06)
+);
