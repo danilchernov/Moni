@@ -33,7 +33,6 @@
     top: 0;
     left: 50%;
     margin-left: -150px;
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     animation: pig 4s infinite alternate both;
     animation-play-state: running;
   }

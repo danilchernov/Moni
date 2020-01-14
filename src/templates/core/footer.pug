@@ -1,5 +1,8 @@
 footer.footer.block
   .footer__wrapper.block__wrapper
+    .footer__logo.logo.logo_secondary
+      +inlineSvg('Icons_Logo', 117, 43, '0 0 117 43')
+
     nav.footer__navigation.navigation.navigation_secondary
         ul.navigation__list
           - 
@@ -41,20 +44,21 @@ footer.footer.block
         h3 Внимание!
         p Услуга обработки заявки является платной и составляет <br>
           span 299 руб
-          |. Услуга далее по сайту — «Активация сервиса». Активация сервиса не гарантирует вам получение займа.
+          |. Услуга далее по сайту — «Активация сервиса». Активация&nbsp;сервиса не гарантирует вам получение займа.
 
         p Для отключения подписки удалите карты в личном кабинете сайта.
 
         strong Заявки принимаются только через форму регистрации на сайте!
-      .footer__col.footer__col_d-flex
+      .footer__col.footer__col_details
+        .footer__sub-row
+          .footer__item
+            h3.footer__subtitle Тел:
+            a.link.td-none(href='tel:+73852229707') 8 (3852) 229-707
+          .footer__item
+            h3.footer__subtitle E-mail:
+            a.link.td-none(href='mailto:client@good-zaim.ru') client@good-zaim.ru
         .footer__item
-          h3.footer__subtitle Тел:
-          a.link.td-none(href='tel:+73852229707') 8 (3852) 229-707
-        .footer__item
-          h3.footer__subtitle E-mail:
-          a.link.td-none(href='mailto:client@good-zaim.ru') client@good-zaim.ru
-        .footer__item.footer__item_full
           h3.footer__subtitle Почтовый адрес:
           address 656049, г. Барнаул, пр-т. Красноармейский д. 47
-      .footer__col.footer__col.d-flex 
+      .footer__col.footer__col.footer__col_ml-auto.d-flex 
         .footer__warning 18+

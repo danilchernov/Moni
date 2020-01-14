@@ -3,7 +3,7 @@
 
   &__wrapper {
     padding-top: 120px;
-    padding-bottom: 93px;
+    padding-bottom: 86px;
   }
 
   &__main {
@@ -21,7 +21,7 @@
   &__row {
     display: flex;
     align-items: flex-start;
-    padding: 30px 20px 30px;
+    padding: 35px 20px 28px;
   }
 
   &__col {
@@ -32,12 +32,13 @@
       margin-right: 0;
     }
 
-    &_d-flex {
+    &_address {
+      max-width: 191px;
+    }
+
+    &_details {
       flex: auto;
-      display: flex;
-      justify-content: space-between;
       max-width: 380px;
-      flex-wrap: wrap;
       margin-bottom: -7px;
     }
 
@@ -46,22 +47,38 @@
     }
   }
 
+  &__sub-row {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 25px;
+
+    .contacts__item {
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
   &__item {
     margin-bottom: 7px;
 
-    &_full {
-      width: 100%;
+    .note {
+      text-transform: none;
+      letter-spacing: normal;
     }
   }
 
   &__subtitle {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-size: 12px;
     font-weight: $font-weight-regular;
     line-height: 1;
     color: map-get($map:$color, $key:remark);
     text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   address {
@@ -69,6 +86,12 @@
     line-height: 1.5;
     font-style: normal;
     color: map-get($map:$color, $key:highlight);
+  }
+
+  &__button {
+    .button__content {
+      min-width: 338px;
+    }
   }
 
   &__side {

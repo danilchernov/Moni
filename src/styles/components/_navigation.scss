@@ -47,7 +47,7 @@
     }
 
     &__item {
-      margin-right: 20px;
+      margin-right: 17px;
 
       &:last-child {
         margin-left: auto;
@@ -61,6 +61,7 @@
       line-height: 2;
       color: map-get($map:$color, $key:light);
       text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
   }
 }

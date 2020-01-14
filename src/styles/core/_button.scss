@@ -8,6 +8,7 @@
 
   display: inline-block;
   border: none;
+  border-radius: 0 10px 0 10px;
   padding: 0;
   text-decoration: none;
   transition: all 0.3s;
@@ -25,14 +26,15 @@
     border-radius: 0 10px 0 10px;
     padding: 19px 20px;
     border: 2px solid map-get($map:$btn-primary, $key:bg-default);
-    font-size: map-get($map: $button-base, $key:font-size);
-    font-weight: map-get($map: $button-base, $key:font-weight);
-    line-height: map-get($map: $button-base, $key:line-height);
+    font-size: map-get($map:$button-base, $key:font-size);
+    font-weight: map-get($map:$button-base, $key:font-weight);
+    line-height: map-get($map:$button-base, $key:line-height);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: map-get($map:$btn-primary, $key:color);
     background-color: map-get($map:$btn-primary, $key:bg-default);
     transition: all 0.3s;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   &__icon {
@@ -57,6 +59,7 @@
 
   &__title {
     min-width: 0;
+    z-index: 1;
   }
 
   &:focus,
@@ -70,8 +73,8 @@
       .button {
         &__content {
           color: map-get($map: $btn-primary, $key:color);
-          background-color: map-get($map: $btn-primary, $key:bg-focus);
-          border-color: map-get($map: $btn-primary, $key:bg-focus);
+          // background-color: map-get($map: $btn-primary, $key:bg-focus);
+          // border-color: map-get($map: $btn-primary, $key:bg-focus);
         }
       }
     }
@@ -81,8 +84,8 @@
       .button {
         &__content {
           color: map-get($map: $btn-primary, $key:color);
-          background-color: map-get($map: $btn-primary, $key:bg-focus);
-          border-color: map-get($map: $btn-primary, $key:bg-focus);
+          // background-color: map-get($map: $btn-primary, $key:bg-focus);
+          // border-color: map-get($map: $btn-primary, $key:bg-focus);
         }
       }
     }
@@ -92,8 +95,8 @@
       .button {
         &__content {
           color: map-get($map: $btn-primary, $key:color);
-          background-color: map-get($map: $btn-primary, $key:bg-active);
-          border-color: map-get($map: $btn-primary, $key:bg-active);
+          // background-color: map-get($map: $btn-primary, $key:bg-active);
+          // border-color: map-get($map: $btn-primary, $key:bg-active);
         }
       }
     }
@@ -165,3 +168,40 @@
     }
   }
 }
+
+/* fill blue */
+// .button_filling {
+//   .button {
+//     &__content {
+//       &::before {
+//         content: "";
+//         position: absolute;
+//         @include size(80px);
+//         top: 8px;
+//         left: -10px;
+//         border-radius: 50%;
+//         background-color: map-get($map:$btn-primary, $key:bg-focus);
+//         transition: all .8s ease, opacity 0;
+//         opacity: 0;
+//       }
+//     }
+//   }
+
+//   @include do($lg, "min-width") {
+//     &:hover,
+//     &:focus {
+//       .button {
+//         &__content {
+//           &::before {
+//             border-radius: 0;
+//             @include size(120%, 600%);
+//             top: -25px;
+//             left: -25px;
+//             z-index: 1;
+//             opacity: 1;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

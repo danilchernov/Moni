@@ -1,7 +1,14 @@
 .custom-range-slider {
+  background-color: map-get($map:$bg, $key:light);
+
+  &__wrapper {
+    padding: 33px 0 0;
+  }
+
   &__top {
     display: flex;
     align-items: center;
+    padding: 0 15px;
     margin-bottom: 13px;
   }
 
@@ -10,6 +17,7 @@
     line-height: 1;
     color: map-get($map:$slider, $key:subtitle);
     text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   &__note {
@@ -18,12 +26,14 @@
     margin-left: auto;
 
     &-icon {
-      margin-right: 10px;
+      margin-right: 5px;
     }
 
     &-total {
       display: flex;
       align-items: center;
+      line-height: 1;
+      letter-spacing: 0.1em;
     }
 
     &-total-number {
@@ -36,11 +46,21 @@
     }
 
     &-total-postfix {
+      align-self: flex-end;
       font-size: 12px;
       line-height: 1;
       color: map-get($map:$slider, $key:subtitle);
       text-transform: uppercase;
     }
+  }
+
+  &__mid {
+    padding: 0 15px;
+    margin-bottom: 50px;
+  }
+
+  &__footer {
+    transform: translateY(11px);
   }
 
   /* Main class */
@@ -85,14 +105,18 @@
   }
   /* Pips */
   .noUi-pips-horizontal {
-    padding-top: 12px;
+    padding-top: 9px;
     padding-bottom: 0;
+  }
+
+  .noUi-value {
+    cursor: pointer;
   }
 
   /* Numbers under the bar */
   .noUi-value-horizontal {
     font-size: 12px;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     line-height: 1.5;
     color: $dash-color;
 

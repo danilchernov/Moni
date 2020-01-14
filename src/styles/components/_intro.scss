@@ -1,5 +1,4 @@
 .intro {
-  // overflow: hidden;
   background: map-get($map:$bg, $key:primary);
 
   &__wrapper {
@@ -11,12 +10,35 @@
   }
 
   &__main {
-    padding-top: 62px;
+    flex: none;
+    width: 480px;
+    padding-top: 85px;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    & > p {
+      margin: 16px 0;
+      color: map-get($map:$color, $key:remark);
+
+      & > .note {
+        font-size: inherit;
+        line-height: inherit;
+      }
+
+      &:first-of-type {
+        margin-top: 33px;
+      }
+    }
+
+    & span {
+      color: map-get($map:$color, $key:highlight);
+    }
   }
 
   &__title {
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     font-size: 30px;
     line-height: 1.2;
     font-weight: $font-weight-regular;
@@ -30,7 +52,7 @@
 
   &__side {
     position: absolute;
-    top: 120px;
-    right: 0;
+    top: 110px;
+    right: -10px;
   }
 }

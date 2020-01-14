@@ -1,13 +1,22 @@
 .note {
   display: flex;
+  align-items: center;
   margin: 0;
 
   font-size: 12px;
   line-height: 2;
   color: map-get($map:$color, $key:highlight);
+  text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  & > span {
+    color: inherit;
+  }
 
   &__icon {
+    line-height: 1;
+
     svg {
       transform: translateY(1px);
     }
@@ -17,7 +26,7 @@
     }
 
     &_side-right {
-      margin-right: 8px;
+      margin-left: 8px;
     }
 
     &_round {
@@ -40,7 +49,34 @@
     line-height: 1.5;
   }
 
-  &.tt-n {
+  &_focus {
+    color: map-get($map:$color, $key:focus);
+
+    .note__icon svg {
+      fill: map-get($map:$color, $key:focus);
+    }
+  }
+
+  &_dashed {
+    span:not(.note__icon) {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: 1px dashed map-get($map:$color, $key:focus);
+      }
+    }
+  }
+
+  &_tt-n {
     text-transform: none;
+  }
+
+  &_lts-normal {
+    letter-spacing: normal;
   }
 }

@@ -17,6 +17,8 @@ export default () => {
       });
 
       noUiSlider.create(slider, {
+        animate: true,
+        animationDuration: 300,
         start: 25000,
         connect: [true, false],
         padding: [1500, 1500],
@@ -35,6 +37,18 @@ export default () => {
           }),
         },
       });
+
+      let pips = slider.querySelectorAll('.noUi-value');
+
+      function clickOnPip() {
+        var value = Number(this.getAttribute('data-value'));
+        slider.noUiSlider.set(value);
+      }
+
+      for (var i = 0; i < pips.length; i++) {
+        pips[i].style.cursor = 'pointer';
+        pips[i].addEventListener('click', clickOnPip);
+      }
 
       /* Show total */
       slider.noUiSlider.on('update', function(values, handle) {

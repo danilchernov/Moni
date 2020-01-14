@@ -23,6 +23,17 @@ block content
         
         +customRangeSlider()
 
+        p Займы от
+          span  25 000 руб. 
+          |выдаются на срок
+          span от 15 до 25 дней
+        p Внимание! Услуга обработки заявки платная и составляет 
+          a.note.note_focus.note_dashed.note_tt-n.note_lts-normal(href='#') 
+            span от 49 до 299 руб.
+            
+            span.note__icon.note__icon_side-right
+              +inlineSvg('icon-question', 16 , 16, '0 0 16 16')
+
         
       .intro__side
         .scene
@@ -34,7 +45,7 @@ block content
       h1.service__title О сервисе
       .service__row
         .service__col
-          p Для получения займа онлайн вам понадобится: 
+          p Для получения займа онлайн вам&nbsp;понадобится: 
           ul
             -
               let conditions = [
@@ -56,7 +67,7 @@ block content
                     height: 30,
                     viewBox: '0 0 29 30'
                   },
-                  paragraph: 'Вам понадобится ввести номер телефона, чтобы с вами могли связаться '
+                  paragraph: 'Вам понадобится ввести номер телефона, чтобы с&nbsp;вами могли связаться '
                 },
                 {
                   title: 'Кредитная карта',
@@ -77,11 +88,11 @@ block content
                 h3
                   +inlineSvg(icon.name, icon.width, icon.height, icon.viewBox)
                   span= title
-                p= paragraph
+                p !{paragraph}
         .service__col 
-          p Займы предоставляются на сумму 
+          p Займы предоставляются на сумму&nbsp; 
             span от 5 000 до 50 000 рублей
-            | включительно на срок от 10 до 44 недель.
+            | включительно на срок от&nbsp;10 до 44 недель.
 
           h3
             span Соглашения и условия
@@ -116,17 +127,18 @@ block content
       .contacts__main
         #map.contacts__map
         .contacts__row
-          .contacts__col
+          .contacts__col.contacts__col_address
             h3.contacts__subtitle Фактический адрес:
-            address 656049, г. Барнаул, пр-т. <br> Красноармейский д. 47
-          .contacts__col.contacts__col_d-flex
+            address 656049, г. Барнаул, пр-т. Красноармейский д. 47
+          .contacts__col.contacts__col_details
+            .contacts__sub-row
+              .contacts__item
+                h3.contacts__subtitle Тел:
+                a.link.td-none(href='tel:+73852229707') 8 (3852) 229-707
+              .contacts__item
+                h3.contacts__subtitle E-mail:
+                a.link.td-none(href='mailto:client@good-zaim.ru') client@good-zaim.ru
             .contacts__item
-              h3.contacts__subtitle Тел:
-              a.link.td-none(href='tel:+73852229707') 8 (3852) 229-707
-            .contacts__item
-              h3.contacts__subtitle E-mail:
-              a.link.td-none(href='mailto:client@good-zaim.ru') client@good-zaim.ru
-            .contacts__item.contacts__item_full
               .note.note_remark.note_fz-large.tt-none
                 .note__icon.d-flex.ai-center.jc-center.note__icon_round.note__icon_side-left
                   +inlineSvg('Icons_Star', 16, 16, '0 0 16 16')

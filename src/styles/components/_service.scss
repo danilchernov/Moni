@@ -1,16 +1,18 @@
 .service {
   &__wrapper {
-    padding: 110px;
+    padding-top: 117px;
+    padding-bottom: 117px;
   }
 
   &__title {
     margin-top: 0;
-    margin-bottom: 18px;
+    margin-bottom: 13px;
     font-size: 12px;
     font-weight: $font-weight-regular;
     color: map-get($map:$color, $key:remark);
     line-height: 1;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   &__row {
@@ -41,7 +43,7 @@
   }
 
   &__col > p + h3 + p {
-    margin-bottom: 23px;
+    margin-bottom: 17px;
   }
 
   &__col ul {
@@ -49,7 +51,7 @@
   }
 
   &__col li {
-    margin-bottom: 21px;
+    margin-bottom: 23px;
 
     &:last-child {
       margin-bottom: 0;

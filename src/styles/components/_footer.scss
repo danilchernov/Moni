@@ -2,15 +2,22 @@
   background-color: map-get($map:$bg, $key:dark);
 
   &__wrapper {
+    position: relative;
     padding-top: 60px;
     padding-bottom: 74px;
 
     color: map-get($map:$color, $key:remark);
   }
 
+  &__logo {
+    position: absolute;
+    top: 47px;
+    right: 30px;
+  }
+
   &__navigation {
     max-width: 597px;
-    margin-bottom: 62px;
+    margin-bottom: 57px;
   }
 
   a.link {
@@ -19,11 +26,16 @@
   }
 
   p {
-    margin: 17px 0;
+    margin-top: 0;
+    margin-bottom: 22px;
 
     span {
       color: map-get($map:$color, $key:focus);
     }
+  }
+
+  p + p {
+    margin-bottom: 17px;
   }
 
   strong {
@@ -33,26 +45,25 @@
 
   &__img {
     display: block;
-    margin-top: 57px;
-    margin-bottom: 30px;
+    margin-top: 39px;
+    margin-bottom: 36px;
     max-width: 100%;
     height: auto;
   }
 
   &__row {
     display: flex;
-    // align-items: flex-start;
   }
 
   &__col {
-    margin-right: 11%;
+    margin-right: 6.3%;
     color: map-get($map:$color, $key:light);
     font-size: 16px;
     line-height: 1.5;
 
     &_flex-initial {
       flex: initial;
-      width: 40.2%;
+      width: 45%;
     }
 
     &_ml-auto {
@@ -63,24 +74,40 @@
       margin-right: 0;
     }
 
-    &_d-flex {
+    &_detailts {
       flex: auto;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
       max-width: 378px;
     }
   }
 
   &__col h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
     font-size: 12px;
+    font-weight: $font-weight-regular;
     line-height: 1;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
   &__col address {
     font-style: normal;
+  }
+
+  &__sub-row {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 16px;
+    margin-bottom: 44px;
+  }
+
+  &__item {
+    margin-bottom: 7px;
+
+    .note {
+      text-transform: none;
+      letter-spacing: normal;
+    }
   }
 
   &__warning {
@@ -89,7 +116,7 @@
     align-items: center;
     justify-content: center;
     @include size(36px);
-    margin-bottom: 45px;
+    margin-bottom: 40px;
     font-size: 14px;
     line-height: 1.25;
     color: map-get($map:$color, $key:highlight);

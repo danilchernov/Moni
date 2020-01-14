@@ -1,7 +1,7 @@
 .tooltip {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -115px;
+  left: -100%;
 
   min-width: 205px;
   padding: 13px 20px 8px;
@@ -9,6 +9,18 @@
   box-shadow: map-get($map:$tooltip, $key:box-shadow);
   border-radius: map-get($map:$tooltip, $key:border-radius);
 
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-right: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+    border-left: 19px solid map-get($map:$tooltip, $key:bg);
+  }
 
   &__total {
     display: flex;

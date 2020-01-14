@@ -1,4 +1,5 @@
 include ../functions/inlineSvg
+include ../components/button
 
 mixin customRangeSlider()
   .intro__custom-range-slider.custom-range-slider.js-custom-range-slider
@@ -12,13 +13,18 @@ mixin customRangeSlider()
             span.custom-range-slider__note-total-number.js-custom-range-slider-total 25 000
             span.custom-range-slider__note-total-postfix руб
 
-      template#tooltip
-        .custom-range-slider__tooltip.tooltip.js-tooltip
+      template#tooltip(style='display: none;')
+        .custom-range-slider__tooltip.js-tooltip
           .tooltip
             .tooltip__wrapper
               .tooltip__total
                 .tooltip__number.js-tooltip-number 25 000
                 .tooltip__postfix руб
               .tooltip__note от 15 до 25 дней
+      .custom-range-slider__mid
+        .custom-range-slider__target.js-custom-range-slider-target
 
-      .custom-range-slider__target.js-custom-range-slider-target
+      .custom-range-slider__footer
+        +button('Рассчитать заём', {
+          btnMods: 'custom-range__footer _filling _full'
+        })

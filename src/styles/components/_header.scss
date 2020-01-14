@@ -9,6 +9,10 @@
   &__col {
     margin-right: 30px;
 
+    &_ml-large {
+      margin-left: 53px;
+    }
+
     &_ml-a {
       margin-left: auto;
     }
@@ -19,14 +23,14 @@
   }
 
   &__side a {
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 17px;
+    line-height: 1;
   }
 
   &__side p {
     margin: 0;
 
-    font-size: 9px;
+    font-size: 10px;
     line-height: 16px;
     color: map-get($map:$color, $key:remark);
     text-transform: uppercase;

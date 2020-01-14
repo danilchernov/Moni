@@ -2,8 +2,10 @@ import '../config/jqueryLoad';
 import 'magnific-popup';
 
 export default () => {
+  let $body = $('body');
   let $openBtn = $('.menu-button_burger');
   let $sidebar = $('.js-sidebar');
+  let scrollBarWidth = window.innerWidth - $(window).width();
 
   let callbacks = {
     beforeOpen() {
@@ -11,12 +13,22 @@ export default () => {
     },
 
     open() {
+      $body.css({
+        'overflow-y': 'hidden',
+      });
+
       $sidebar.addClass('slideInRight');
     },
 
     beforeClose() {
       $sidebar.removeClass('slideInRight');
       $sidebar.addClass('slideOutRight');
+    },
+
+    close() {
+      $body.css({
+        'overflow-y': 'auto',
+      });
     },
   };
 
