@@ -82,6 +82,11 @@
 
   .noUi-connect {
     background-color: map-get($map:$slider, $key:bar-active);
+    transition: all 0.3s;
+
+    &.full {
+      background-color: map-get($map:$slider, $key:bar-disabled);
+    }
   }
 
   /* Control */

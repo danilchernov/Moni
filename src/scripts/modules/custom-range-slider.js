@@ -38,35 +38,56 @@ export default () => {
         },
       });
 
-      let pips = slider.querySelectorAll('.noUi-value');
+      /* Pip event listeners */
+      let pips = {
+        elements: slider.querySelectorAll('.noUi-value'),
+        init() {
+          for (var i = 0; i < this.elements.length; i++) {
+            this.elements[i].style.cursor = 'pointer';
+            this.elements[i].addEventListener('click', this.clickOnPip);
+          }
+        },
+        clickOnPip() {
+          var value = Number(this.getAttribute('data-value'));
+          slider.noUiSlider.set(value);
+        },
+      };
 
-      function clickOnPip() {
-        var value = Number(this.getAttribute('data-value'));
-        slider.noUiSlider.set(value);
-      }
+      pips.init();
 
-      for (var i = 0; i < pips.length; i++) {
-        pips[i].style.cursor = 'pointer';
-        pips[i].addEventListener('click', clickOnPip);
-      }
-
-      /* Show total */
-      slider.noUiSlider.on('update', function(values, handle) {
+      function convertToFormat(number) {
         let localFormat = wNumb({
           thousand: ' ',
           postfix: '',
           decimals: 0,
         });
 
-        let localValue = localFormat.to(+values[handle]);
+        let localValue = localFormat.to(number);
 
-        sliderTotal.textContent = localValue;
+        return localValue;
+      }
 
-        tooltip.updateElement(null, localValue);
-      });
+      function updateTotal(totalPrice) {
+        sliderTotal.textContent = convertToFormat(totalPrice);
+      }
 
-      slider.noUiSlider.on('start', function(values, handle) {
-        tooltip.initElement();
+      function checkLimit(limit) {
+        let bar = document.querySelector('.custom-range-slider .noUi-connect');
+
+        if (limit === 50000) {
+          bar.classList.add('full');
+        } else {
+          bar.classList.remove('full');
+        }
+      }
+
+      /* Show total */
+      slider.noUiSlider.on('update', function(values, handle) {
+        let number = +values[handle];
+
+        updateTotal(number);
+        tooltip.updateElement(null, convertToFormat(number));
+        checkLimit(number);
       });
 
       slider.noUiSlider.on('start', function(values, handle) {

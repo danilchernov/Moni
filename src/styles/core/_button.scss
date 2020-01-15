@@ -16,6 +16,15 @@
   background-color: transparent;
   cursor: pointer;
 
+  &__ripple {
+    position: absolute;
+    @include size(0);
+    border-radius: 50%;
+    background-color: map-get($map:$btn-primary, $key:bg-focus);
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transform: translate(-50%, -50%);
+  }
+
   &__content {
     position: relative;
     display: flex;
@@ -73,8 +82,6 @@
       .button {
         &__content {
           color: map-get($map: $btn-primary, $key:color);
-          // background-color: map-get($map: $btn-primary, $key:bg-focus);
-          // border-color: map-get($map: $btn-primary, $key:bg-focus);
         }
       }
     }
@@ -84,8 +91,6 @@
       .button {
         &__content {
           color: map-get($map: $btn-primary, $key:color);
-          // background-color: map-get($map: $btn-primary, $key:bg-focus);
-          // border-color: map-get($map: $btn-primary, $key:bg-focus);
         }
       }
     }
@@ -95,8 +100,10 @@
       .button {
         &__content {
           color: map-get($map: $btn-primary, $key:color);
-          // background-color: map-get($map: $btn-primary, $key:bg-active);
-          // border-color: map-get($map: $btn-primary, $key:bg-active);
+        }
+
+        &__ripple {
+          background-color: map-get($map: $btn-primary, $key:bg-active);
         }
       }
     }
@@ -168,40 +175,3 @@
     }
   }
 }
-
-/* fill blue */
-// .button_filling {
-//   .button {
-//     &__content {
-//       &::before {
-//         content: "";
-//         position: absolute;
-//         @include size(80px);
-//         top: 8px;
-//         left: -10px;
-//         border-radius: 50%;
-//         background-color: map-get($map:$btn-primary, $key:bg-focus);
-//         transition: all .8s ease, opacity 0;
-//         opacity: 0;
-//       }
-//     }
-//   }
-
-//   @include do($lg, "min-width") {
-//     &:hover,
-//     &:focus {
-//       .button {
-//         &__content {
-//           &::before {
-//             border-radius: 0;
-//             @include size(120%, 600%);
-//             top: -25px;
-//             left: -25px;
-//             z-index: 1;
-//             opacity: 1;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
