@@ -7,6 +7,10 @@ export default () => {
   let $sidebar = $('.js-sidebar');
   let scrollBarWidth = window.innerWidth - $(window).width();
 
+  function preventDefault(e) {
+    e.preventDefault();
+  }
+
   let callbacks = {
     beforeOpen() {
       $sidebar.removeClass('slideOutRight');
@@ -14,10 +18,13 @@ export default () => {
 
     open() {
       $body.css({
-        'overflow-y': 'hidden',
+        overflow: 'hidden',
       });
 
       $sidebar.addClass('slideInRight');
+      document.body.addEventListener('touchmove', preventDefault, {
+        passive: false,
+      });
     },
 
     beforeClose() {
@@ -27,8 +34,9 @@ export default () => {
 
     close() {
       $body.css({
-        'overflow-y': 'auto',
+        overflow: 'auto',
       });
+      document.body.removeEventListener('touchmove', preventDefault);
     },
   };
 

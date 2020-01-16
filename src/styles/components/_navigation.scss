@@ -65,3 +65,18 @@
     }
   }
 }
+
+
+@include do($md) {
+  .navigation_secondary {
+    .navigation {
+      &__list {
+        display: block;
+      }
+
+      &__item {
+        margin-right: 0;
+      }
+    }
+  }
+}

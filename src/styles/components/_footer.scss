@@ -1,5 +1,4 @@
 .footer {
-  display: none;
   background-color: map-get($map:$bg, $key:dark);
 
   &__wrapper {
@@ -24,6 +23,11 @@
   a.link {
     font-size: inherit;
     line-height: inherit;
+  }
+
+  &__col p {
+    color: inherit;
+    text-decoration: none;
   }
 
   p {
@@ -123,5 +127,92 @@
     color: map-get($map:$color, $key:highlight);
     background-color: map-get($map:$bg, $key:warning);
     border-radius: 0 10px 0 10px;
+  }
+}
+
+
+@include do($xl) {
+  .footer {
+    &__warning {
+      margin-bottom: 42px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.28;
+    }
+  }
+}
+
+
+@include do(1000px) {
+  .footer {
+    &__warning {
+      margin-bottom: 30px;
+    }
+
+    &__sub-row {
+      display: block;
+      margin-bottom: 19px;
+    }
+
+    &__col {
+      &_flex-initial {
+        width: 46.3%;
+      }
+
+      &_details {
+        width: 195px;
+      }
+    }
+
+    &__item {
+      margin-bottom: 19px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@include do(688px) {
+  .footer {
+    &__wrapper {
+      padding-top: 33px;
+      padding-bottom: 39px;
+    }
+
+    &__navigation {
+      margin-bottom: 40px;
+    }
+
+    &__logo {
+      position: static;
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin-bottom: 17px;
+    }
+
+    &__row {
+      display: block;
+    }
+
+    &__col {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    address {
+      max-width: 195px;
+    }
   }
 }

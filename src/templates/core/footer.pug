@@ -1,31 +1,33 @@
 footer.footer.block
   .footer__wrapper.block__wrapper
-    .footer__logo.logo.logo_secondary
-      +inlineSvg('Icons_Logo', 117, 43, '0 0 117 43')
+    
 
     nav.footer__navigation.navigation.navigation_secondary
-        ul.navigation__list
-          - 
-            var links = [
-              {
-                title: 'Cпособы получения',
-              },
-              {
-                title: 'О сервисе',
-              },
-              {
-                title: 'Документы',
-              },
-              {
-                title: 'Лучшие предложения',
-                star: true 
-              },
-            ]
+      ul.navigation__list
+        - 
+          var links = [
+            {
+              title: 'Cпособы получения',
+            },
+            {
+              title: 'О сервисе',
+            },
+            {
+              title: 'Документы',
+            },
+            {
+              title: 'Лучшие предложения',
+              star: true 
+            },
+          ]
 
-          each link in links
-            - var {title, star} = link
-            li.navigation__item
-              a.navigation__link(class= star? 'navigation__link_star': null,href='#', title='#', aria-label='#') !{title}
+        each link in links
+          - var {title, star} = link
+          li.navigation__item
+            a.navigation__link(class= star? 'navigation__link_star': null,href='#', title='#', aria-label='#') !{title}
+
+    .footer__logo.logo.logo_secondary
+      +inlineSvg('Icons_Logo', 117, 43, '0 0 117 43')
     
     p Услуги на проекте «hot-zaim.ru» оказываются ИП Стрельчик Е.О. ОРГНИП 317222500001910, ИНН 220802885324, которое действует в интересах и по поручению организации ООО Микрокредитная Компания «Оливин Финанс». Свидетельство о внесении сведений о юридическом лице в государственный реестр микрофинансовых организаций № 001503504007205 Лицензия: 002549 от 25.11.2015, которая на основании ФЗ «О потребительском кредите (займе)» от 21.12.2013 № 353-ФЗ имеет право осуществлять профессиональную деятельность по предоставлению потребительских займов.
 
@@ -42,11 +44,14 @@ footer.footer.block
     .footer__row
       .footer__col.footer__col_flex-initial
         h3 Внимание!
-        p Услуга обработки заявки является платной и составляет <br>
+        p Услуга обработки заявки является платной и составляет 
           span 299 руб
           |. Услуга далее по сайту — «Активация сервиса». Активация&nbsp;сервиса не гарантирует вам получение займа.
 
-        p Для отключения подписки удалите карты в личном кабинете сайта.
+        p Для отключения подписки удалите карты в 
+          a(href='#').link 
+            span личном&nbsp;кабинете 
+          |  сайта.
 
         strong Заявки принимаются только через форму регистрации на сайте!
       .footer__col.footer__col_details
