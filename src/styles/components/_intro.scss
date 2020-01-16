@@ -1,5 +1,29 @@
+@keyframes clouds {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    animation-timing-function: ease-in-out;
+  }
+
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 16, 0, 1);
+  }
+}
+
+@keyframes pig {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    animation-timing-function: ease-in-out;
+  }
+
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -30, 0, 1);
+  }
+}
+
+
 .intro {
   background: map-get($map:$bg, $key:primary);
+  margin-bottom: 200px;
 
   &__wrapper {
     position: relative;
@@ -10,12 +34,14 @@
   }
 
   &__main {
+    position: relative;
     flex: none;
     width: 480px;
     padding-top: 85px;
 
     font-size: 16px;
     line-height: 1.5;
+    z-index: 1;
 
     & > p {
       margin: 16px 0;
@@ -51,8 +77,90 @@
   }
 
   &__side {
+    position: relative;
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  &__bg {
     position: absolute;
-    top: 110px;
-    right: -10px;
+    @include trbl(100px, 0, 0, 0);
+    background: url("../images/clouds.png") 93% 0 no-repeat;
+    // animation: clouds 4s infinite alternate both;
+    // animation-play-state: running;
+  }
+
+  &__pig {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    // animation: pig 4s infinite alternate both;
+    // animation-play-state: running;
   }
 }
+
+@include do($xxl) {
+  .intro {
+    &__bg {
+      background-position: 120% 0;
+    }
+  }
+}
+
+@include do($xl) {
+  .intro {
+    &__bg {
+      background-position: 140% 17%;
+    }
+  }
+}
+
+@include do($lg) {
+  .intro {
+    &__bg {
+      display: none;
+    }
+
+    &__title {
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    &__main {
+      padding-top: 40px;
+      width: 378px;
+    }
+  }
+}
+
+@include do($md) {
+  .intro {
+    &__side {
+      display: none;
+    }
+  }
+}
+
+@include do($sm) {
+  .intro {
+    &__wrapper {
+      padding-top: 140px;
+      height: auto;
+      padding-bottom: 10px;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    &__main {
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+}
+

@@ -10,16 +10,16 @@ header.header.block
 			.header__col
 				a.link.link_td-n(href='tel:88005502311', title='Телефон службы поддержки 📞') 8 (800) 550-2311
 				p Заявки принимаются только на сайте!
-			.header__col.header__col_ml-a
+			.header__col.header__col_ml-a.header__col_lg-hidden
 				.header__note.note
 					span Ваша заявка
 					.note__icon.note__icon_side-right
 						+inlineSvg('Icons_Star', 16, 16, '0 0 16 16')
-			.header__col
+			.header__col.header__col_lg-hidden
 				+button('Рассчитать заём', {
 					btnMods: '_rounded _transparent'
 				})
-			.header__col.header__col_ml-large
+			.header__col.header__col_ml-large.header__col_lg-ml-auto.header__col_sm-pos-a
 				a.header__menu-button.menu-button.menu-button_burger(href='#sidebar', aria-label='Открыть меню')
 					span
 					span

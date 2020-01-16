@@ -3,11 +3,14 @@
     display: flex;
     align-items: center;
     padding: 25px 0 20px 0;
-    margin-right: -30px;
   }
 
   &__col {
     margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &_ml-large {
       margin-left: 53px;
@@ -34,5 +37,52 @@
     line-height: 16px;
     color: map-get($map:$color, $key:remark);
     text-transform: uppercase;
+  }
+}
+
+@include do($xl) {
+  .header {
+    &__logo {
+      margin-right: 0;
+    }
+  }
+}
+
+@include do($lg) {
+  .header {
+    &__col {
+      margin-right: 60px;
+
+      &_lg-hidden {
+        display: none;
+      }
+
+      &_ml-large {
+        margin-left: 0;
+      }
+
+      &_lg-ml-auto {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+@include do($sm) {
+  .header {
+    &__side {
+      display: block;
+    }
+
+    &__col {
+      margin-bottom: 20px;
+      margin-right: 0;
+
+      &_sm-pos-a {
+        position: absolute;
+        top: 40px;
+        right: 15px;
+      }
+    }
   }
 }

@@ -1,4 +1,5 @@
 .footer {
+  display: none;
   background-color: map-get($map:$bg, $key:dark);
 
   &__wrapper {

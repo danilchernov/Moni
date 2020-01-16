@@ -9,12 +9,13 @@ block title
   | Moni 🌟
 
 block scripts
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=b750eee1-3a58-4691-bd74-8e3e5c3681c1&lang=ru_RU"></script>
+  //- <script src="https://api-maps.yandex.ru/2.1/?apikey=b750eee1-3a58-4691-bd74-8e3e5c3681c1&lang=ru_RU"></script>
 
 
 block content
   
   section.intro.block
+    .intro__bg
     .intro__wrapper.block__wrapper
       .intro__main
         h2.intro__title 
@@ -36,11 +37,9 @@ block content
 
         
       .intro__side
-        .scene
-          img.scene__clouds(src='images/clouds.png', alt='Облака')
-          img.scene__pig(src='images/pig.png', alt='Денежная свинюшка 🐷')
+        img.intro__pig(src='images/pig.png', alt='Денежная свинюшка 🐷')
   
-  section.service.block
+  //- section.service.block
     .service__wrapper.block__wrapper
       h1.service__title О сервисе
       .service__row
@@ -122,7 +121,7 @@ block content
         .service__col
           +card()
   
-  section.contacts.block
+  //- section.contacts.block
     .contacts__wrapper.block__wrapper
       .contacts__main
         #map.contacts__map
