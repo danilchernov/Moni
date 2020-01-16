@@ -29,6 +29,7 @@
     // letter-spacing: 0.1em;
 
     span {
+      font-weight: inherit;
       color: map-get($map:$color, $key:focus);
     }
   }

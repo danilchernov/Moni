@@ -23,7 +23,6 @@
 
 .intro {
   background: map-get($map:$bg, $key:primary);
-  margin-bottom: 200px;
 
   &__wrapper {
     position: relative;
@@ -163,4 +162,3 @@
     }
   }
 }
-

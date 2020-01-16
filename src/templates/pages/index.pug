@@ -39,7 +39,7 @@ block content
       .intro__side
         img.intro__pig(src='images/pig.png', alt='Денежная свинюшка 🐷')
   
-  //- section.service.block
+  section.service.block
     .service__wrapper.block__wrapper
       h1.service__title О сервисе
       .service__row
@@ -90,8 +90,8 @@ block content
                 p !{paragraph}
         .service__col 
           p Займы предоставляются на сумму&nbsp; 
-            span от 5 000 до 50 000 рублей
-            | включительно на срок от&nbsp;10 до 44 недель.
+            span от 5&nbsp;000 до&nbsp;50 000 рублей
+            |  включительно на срок от&nbsp;10 до 44 недель.
 
           h3
             span Соглашения и условия
@@ -118,10 +118,10 @@ block content
             a(href='#').link.d-flex.ai-center
               +inlineSvg('Icons_PDF', 21, 14, '0 0 21 14')
               span= title
-        .service__col
+        .service__col.service__col_xl-pos-a
           +card()
   
-  //- section.contacts.block
+  section.contacts.block
     .contacts__wrapper.block__wrapper
       .contacts__main
         #map.contacts__map

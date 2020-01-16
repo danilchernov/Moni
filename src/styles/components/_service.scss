@@ -94,3 +94,42 @@
     }
   }
 }
+
+
+@include do($xl) {
+  .service {
+    &__wrapper {
+      padding-top: 50px;
+      padding-bottom: 27px;
+    }
+
+    &__row {
+      display: block;
+      margin: 0;
+    }
+
+    &__col {
+      max-width: 57.5%;
+      margin: 0;
+      margin-bottom: 23px;
+
+      &_xl-pos-a {
+        max-width: 380px;
+        position: absolute;
+        top: 66px;
+        right: 30px;
+      }
+    }
+  }
+}
+
+@include do($lg) {
+  .service {
+    &__col {
+      max-width: 80%;
+      &_xl-pos-a {
+        display: none;
+      }
+    }
+  }
+}
