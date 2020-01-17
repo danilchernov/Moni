@@ -65,8 +65,8 @@
     position: absolute;
     top: 40px;
     right: 30px;
-    @include size(16px);
-    padding: 0;
+    @include size(22px);
+    padding: 3px;
     background-color: transparent;
 
     &::before {

@@ -9,4 +9,15 @@
     fill: map-get($map:$color, $key:focus);
     transition: all 0.3s;
   }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include do(1050px, "min-width") {
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
 }

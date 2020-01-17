@@ -10,7 +10,7 @@
   &__main {
     background-color: map-get($map:$bg, $key:light);
     box-shadow: map-get($map:$contacts, $key:box-shadow);
-    border-radius: 10px 10px;
+    border-radius: 10px;
     overflow: hidden;
   }
 
@@ -160,6 +160,10 @@
     &__wrapper {
       padding-top: 50px;
       padding-bottom: 40px;
+    }
+
+    &__main {
+      border-radius: 10px 10px 0 10px;
     }
 
     &__row {

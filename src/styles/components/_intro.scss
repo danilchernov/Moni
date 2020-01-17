@@ -87,17 +87,17 @@
     position: absolute;
     @include trbl(100px, 0, 0, 0);
     background: url("../images/clouds.png") 93% 0 no-repeat;
-    // animation: clouds 4s infinite alternate both;
-    // animation-play-state: running;
+    animation: clouds 4s infinite alternate both;
+    animation-play-state: running;
   }
 
   &__pig {
     position: absolute;
     top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    // animation: pig 4s infinite alternate both;
-    // animation-play-state: running;
+    left: 24%;
+    // transform: translateX(-50%);
+    animation: pig 4s infinite alternate both;
+    animation-play-state: running;
   }
 }
 
@@ -113,6 +113,10 @@
   .intro {
     &__bg {
       background-position: 140% 17%;
+    }
+
+    &__pig {
+      left: 13%;
     }
   }
 }
@@ -131,6 +135,10 @@
     &__main {
       padding-top: 40px;
       width: 378px;
+    }
+
+    &__pig {
+      left: 10%;
     }
   }
 }
